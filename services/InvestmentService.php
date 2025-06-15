@@ -14,4 +14,23 @@ class InvestmentService {
         $investment = new Investment($nome, $tipo, $data, $valor);
         return $this->repository->salvar($investment);
     }
+
+    public function listar() {
+        return $this->repository->buscarTodos();
+    }
+
+    public function excluir($id) {
+        if (!$id) return false;
+        return $this->repository->excluir($id);
+    }
+
+    public function editar($id, $nome, $tipo, $data, $valor) {
+        if (!$id || !$nome || !$tipo || !$data || !$valor) return false;
+        $investment = new Investment($nome, $tipo, $data, $valor, $id);
+        return $this->repository->editar($investment);
+    }
+
+    
+    
+     
 }
