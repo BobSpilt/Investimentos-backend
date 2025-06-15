@@ -34,6 +34,7 @@ O back-end foi desenvolvido em **PHP**, utilizando a extensão **MySQLi** para c
 ## Requisitos
 
 - XAMPP ou outro ambiente com Apache/PHP/MySQL
+- PHP 8.1.6
 
 ---
 
