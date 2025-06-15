@@ -4,11 +4,11 @@ require_once __DIR__ . '/../repositories/InvestmentRepository.php';
 
 class InvestmentService {
     private $repository;
-
+    // Repositório de investimentos
     public function __construct() {
         $this->repository = new InvestmentRepository();
     }
-
+    // Redireciona as a funções de cadastro, listagem, exclusão e edição para o repositório
     public function cadastrar($nome, $tipo, $data, $valor) {
         if (!$nome || !$tipo || !$data || !$valor) return false;
         $investment = new Investment($nome, $tipo, $data, $valor);

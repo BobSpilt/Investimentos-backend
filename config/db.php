@@ -1,4 +1,5 @@
 <?php
+// Conectando com banco de dados
 class DB {
     public static function connect() {
         $conn = new mysqli("localhost", "root", "", "investimentos_db");

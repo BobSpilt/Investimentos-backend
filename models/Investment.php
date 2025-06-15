@@ -1,4 +1,4 @@
-<?php
+<?php  
 class Investment {
     public $id; 
     public $nome;

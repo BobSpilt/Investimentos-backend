@@ -3,9 +3,10 @@ require_once __DIR__ . '/controllers/InvestmentController.php';
 
 $controller = new InvestmentController();
 
-
+// Coleta o que veio no $_GET['action']
 $action = $_GET['action'] ?? '';
 
+// Compara o valor de $action e chama o método correspondente
 if ($action === 'json') {
     $controller->listarJSON();
 }
