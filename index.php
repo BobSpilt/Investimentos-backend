@@ -12,7 +12,15 @@ if ($action === 'json') {
 }
 
 if ($action === 'cadastrar') {
-    $controller->cadastrar();
+
+    $nome = $_POST['nome'] ?? '';
+    $tipo = $_POST['tipo'] ?? '';
+    $data = $_POST['data'] ?? '';
+    $valor = $_POST['valor'] ?? '';
+
+    if ($nome && $tipo && $data && $valor) {
+    $controller->cadastrar($nome, $tipo, $data, $valor);
+    }
 }
 
 if ($action === 'excluir') {

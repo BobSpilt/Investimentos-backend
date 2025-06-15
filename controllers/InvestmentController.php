@@ -7,24 +7,19 @@ class InvestmentController {
     public function __construct() {
         $this->service = new InvestmentService();
     }
-
-    // Método para cadastrar um novo investimento
-    public function cadastrar() {
-        
-            $nome = $_POST['nome'] ?? '';
-            $tipo = $_POST['tipo'] ?? '';
-            $data = $_POST['data'] ?? '';
-            $valor = $_POST['valor'] ?? '';
-
-            $sucesso = $this->service->cadastrar($nome, $tipo, $data, $valor);
-        
-    }
+    
     // Método para listar investimentos em formato JSON
     public function listarJSON() {
         $investimentos = $this->service->listar();
         header('Content-Type: application/json');
         echo json_encode($investimentos);
     }
+
+    // Método para cadastrar um novo investimento
+    public function cadastrar($nome, $tipo, $data, $valor) { 
+            $sucesso = $this->service->cadastrar($nome, $tipo, $data, $valor);
+    }
+   
     // Métodos para excluir e editar investimentos
     public function excluir($id) {
         $sucesso = $this->service->excluir($id);
